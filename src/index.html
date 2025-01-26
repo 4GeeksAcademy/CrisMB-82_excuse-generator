@@ -1,29 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Excuse Generator</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link rel="icon" href="./4geeks.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="container text-center mt-5">
+      <h1 class="text-uppercase fw-bold">Excuse Generator</h1>
+      <div class="alert alert-warning mt-4">
+        <h2 class="fs-4">OMG! You will not believe me, but...</h2>
+        <p id="excuse" class="fs-5 fw-bold">My dog ate my homework</p>
       </div>
+      <button id="changeExcuse" class="btn btn-danger btn-lg mt-3">
+        Change Excuse
+      </button>
     </div>
+
+    <script>
+      // JavaScript to dynamically change the excuse
+      const excuses = [
+        "My dog ate my homework",
+        "I lost my keys",
+        "The traffic was unbelievable",
+        "My alarm didn’t go off",
+        "I got stuck in an elevator"
+      ];
+
+      document.getElementById("changeExcuse").addEventListener("click", () => {
+        const randomIndex = Math.floor(Math.random() * excuses.length);
+        document.getElementById("excuse").textContent = excuses[randomIndex];
+      });
+    </script>
   </body>
 </html>
